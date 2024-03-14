@@ -53,11 +53,11 @@ jobs:
             packer${{ steps.setup-env.outputs.packer-version }}-\
             tf-${{ steps.setup-env.outputs.terraform-version }}-"
         with:
+          key: "${{ env.BASE_CACHE_KEY }}\
+            ${{ hashFiles('**/requirements.txt') }}"
           path: |
             ${{ env.PIP_CACHE_DIR }}
             ${{ env.CURL_CACHE_DIR }}
-          key: "${{ env.BASE_CACHE_KEY }}\
-            ${{ hashFiles('**/requirements.txt') }}"
           restore-keys: |
             ${{ env.BASE_CACHE_KEY }}
       - name: Setup curl cache
