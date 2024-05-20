@@ -25,7 +25,7 @@ ansible>=8,<10
 # made to this dependency must also be made in requirements-test.txt
 # in cisagov/skeleton-ansible-role and .pre-commit-config.yaml in
 # cisagov/skeleton-generic.
-ansible-core<2.16.3
+ansible-core<2.17.1
 boto3
 docopt
 semver
