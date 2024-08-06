@@ -73,7 +73,10 @@ jobs:
             "https://releases.hashicorp.com/packer/${PACKER_VERSION}/${PACKER_ZIP}"
           sudo unzip -d /opt/packer \
             ${{ env.CURL_CACHE_DIR }}/"${PACKER_ZIP}"
-          sudo mv /usr/local/bin/packer /usr/local/bin/packer-default
+          if [ -e /usr/local/bin/packer ]
+          then
+            sudo mv /usr/local/bin/packer /usr/local/bin/packer-default
+          fi
           sudo ln -s /opt/packer/packer /usr/local/bin/packer
       - uses: hashicorp/setup-terraform@v3
         with:
