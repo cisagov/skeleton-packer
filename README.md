@@ -130,7 +130,7 @@ Here is an example of how to kick off a pre-release build:
 ```console
 pip install --requirement requirements-dev.txt
 ansible-galaxy install --force --force-with-deps --role-file src/requirements.yml
-AWS_PROFILE=cool-images-ec2amicreate-skeleton-packer packer build --timestamp-ui -var release_tag=$(./bump_version.sh show) -var is_prerelease=true src/packer.pkr.hcl
+AWS_PROFILE=cool-images-ec2amicreate-skeleton-packer packer build --timestamp-ui -var release_tag=$(./bump-version show) -var is_prerelease=true src/packer.pkr.hcl
 ```
 
 If you are satisfied with your pre-release image, you can easily create a release
