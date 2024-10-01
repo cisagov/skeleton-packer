@@ -24,6 +24,6 @@ ansible>=8,<10
 ansible-core>=2.16.7
 boto3
 docopt
-semver
+semver>=3
 setuptools
 wheel
