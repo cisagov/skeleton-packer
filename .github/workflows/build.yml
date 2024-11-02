@@ -33,7 +33,7 @@ jobs:
     name: Run diagnostics
     # This job does not need any permissions
     permissions: {}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       # Note that a duplicate of this step must be added at the top of
       # each job.
@@ -60,7 +60,7 @@ jobs:
     permissions:
       # actions/checkout needs this to fetch code
       contents: read
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: mcdonnnj/actions-permissions/monitor@improvement/adjust_python_installation_on_linux_runners
         with:
@@ -181,7 +181,7 @@ jobs:
     permissions:
       # actions/checkout needs this to fetch code
       contents: read
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: mcdonnnj/actions-permissions/monitor@improvement/adjust_python_installation_on_linux_runners
         with:
@@ -222,7 +222,7 @@ jobs:
     permissions:
       # actions/checkout needs this to fetch code
       contents: read
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
