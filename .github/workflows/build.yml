@@ -37,7 +37,7 @@ jobs:
     steps:
       # Note that a duplicate of this step must be added at the top of
       # each job.
-      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      - uses: mcdonnnj/actions-permissions/monitor@improvement/adjust_python_installation_on_linux_runners
         with:
           # Uses the organization variable unless overridden
           config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
@@ -62,7 +62,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      - uses: mcdonnnj/actions-permissions/monitor@improvement/adjust_python_installation_on_linux_runners
         with:
           # Uses the organization variable unless overridden
           config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
@@ -183,7 +183,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      - uses: mcdonnnj/actions-permissions/monitor@improvement/adjust_python_installation_on_linux_runners
         with:
           # Uses the organization variable unless overridden
           config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
@@ -230,7 +230,7 @@ jobs:
           - arm64
           - x86_64
     steps:
-      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      - uses: mcdonnnj/actions-permissions/monitor@improvement/adjust_python_installation_on_linux_runners
         with:
           # Uses the organization variable unless overridden
           config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
