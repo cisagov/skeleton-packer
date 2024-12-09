@@ -10,7 +10,7 @@ VERSION_FILE=src/version.txt
 
 HELP_INFORMATION="bump_version.sh (show|major|minor|patch|prerelease|build|finalize)"
 
-old_version=$(sed -n "s/^__version__ = \"\(.*\)\"$/\1/p" $VERSION_FILE)
+old_version=$(< "$VERSION_FILE")
 # Comment out periods so they are interpreted as periods and don't
 # just match any character
 old_version_regex=${old_version//\./\\\.}
