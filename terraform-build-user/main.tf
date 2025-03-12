@@ -7,6 +7,12 @@ module "iam_user" {
     aws.images-ssm = aws.images-ssm
   }
 
-  ssm_parameters = ["/cyhy/dev/users", "/ssh/public_keys/*"]
-  user_name      = "build-skeleton-packer"
+  ssm_parameters = [
+    "/cyhy/dev/users",
+    "/ssh/public_keys/*",
+    # Any Packer AMIs that require access to the third-party bucket
+    # will also require access to this SSM Parameter Store parameter.
+    # "/third_party_bucket_name",
+  ]
+  user_name = "build-skeleton-packer"
 }
