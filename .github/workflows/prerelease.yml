@@ -1,9 +1,10 @@
 ---
 name: prerelease
 
-on:
+on:  # yamllint disable-line rule:truthy
   release:
-    types: [prereleased]
+    types:
+      - prereleased
 
 env:
   AWS_DEFAULT_REGION: us-east-1

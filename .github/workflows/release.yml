@@ -1,9 +1,10 @@
 ---
 name: release
 
-on:
+on:  # yamllint disable-line rule:truthy
   release:
-    types: [released]
+    types:
+      - released
 
 env:
   AWS_DEFAULT_REGION: us-east-1
