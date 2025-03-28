@@ -221,15 +221,15 @@ jobs:
           python-version: ${{ steps.setup-env.outputs.python-version }}
       - uses: actions/cache@v4
         env:
-          BASE_CACHE_KEY: "${{ github.job }}-${{ runner.os }}-\
+          BASE_CACHE_KEY: ${{ github.job }}-${{ runner.os }}-\
             py${{ steps.setup-python.outputs.python-version }}-\
-            packer${{ steps.setup-env.outputs.packer-version }}-"
+            packer${{ steps.setup-env.outputs.packer-version }}-
         with:
           path: |
             ${{ env.PIP_CACHE_DIR }}
-          key: "${{ env.BASE_CACHE_KEY }}\
+          key: ${{ env.BASE_CACHE_KEY }}\
             ${{ hashFiles('**/requirements-test.txt') }}-\
-            ${{ hashFiles('**/requirements.txt') }}"
+            ${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ env.BASE_CACHE_KEY }}
       - uses: hashicorp/setup-packer@v3
@@ -284,15 +284,15 @@ jobs:
           python-version: ${{ steps.setup-env.outputs.python-version }}
       - uses: actions/cache@v4
         env:
-          BASE_CACHE_KEY: "${{ github.job }}-${{ runner.os }}-\
+          BASE_CACHE_KEY: ${{ github.job }}-${{ runner.os }}-\
             py${{ steps.setup-python.outputs.python-version }}-\
             packer${{ steps.setup-env.outputs.packer-version }}-\
-            tf-${{ steps.setup-env.outputs.terraform-version }}-"
+            tf-${{ steps.setup-env.outputs.terraform-version }}-
         with:
           path: |
             ${{ env.PIP_CACHE_DIR }}
-          key: "${{ env.BASE_CACHE_KEY }}\
-            ${{ hashFiles('**/requirements.txt') }}"
+          key: ${{ env.BASE_CACHE_KEY }}\
+            ${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ env.BASE_CACHE_KEY }}
       - uses: hashicorp/setup-packer@v3
