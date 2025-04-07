@@ -203,15 +203,28 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      - name: Apply standard cisagov job preamble
+        uses: cisagov/action-job-preamble@v1
         with:
-          # Uses the organization variable unless overridden
-          config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
-      - id: harden-runner
-        name: Harden the runner
-        uses: step-security/harden-runner@v2
-        with:
-          egress-policy: audit
+          # This functionality is poorly implemented and has been
+          # causing problems due to the MITM implementation hogging or
+          # leaking memory.  If this happens to you just uncomment
+          # this line.
+          # monitor_permissions: "false"
+          # Use a variable to specify the permissions monitoring
+          # configuration. By default this will yield the
+          # configuration stored in the cisagov organization-level
+          # variable, but if you want to use a different configuration
+          # then simply:
+          # 1. Create a repository-level variable with the name
+          # ACTIONS_PERMISSIONS_CONFIG.
+          # 2. Set this new variable's value to the configuration you
+          # want to use for this repository.
+          #
+          # Note in particular that changing the permissions
+          # monitoring configuration *does not* require you to modify
+          # this workflow.
+          permissions_monitoring_config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
       - id: setup-env
         uses: cisagov/setup-env-github-action@develop
       - uses: actions/checkout@v4
@@ -264,17 +277,28 @@ jobs:
           - arm64
           - x86_64
     steps:
-      # This job fails with the permissions monitoring in place,
-      # perhaps due to resource constraints on the free GH runners.
-      # - uses: GitHubSecurityLab/actions-permissions/monitor@v1
-      #   with:
-      #     # Uses the organization variable unless overridden
-      #     config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
-      - id: harden-runner
-        name: Harden the runner
-        uses: step-security/harden-runner@v2
+      - name: Apply standard cisagov job preamble
+        uses: cisagov/action-job-preamble@v1
         with:
-          egress-policy: audit
+          # This functionality is poorly implemented and has been
+          # causing problems due to the MITM implementation hogging or
+          # leaking memory.  If this happens to you just uncomment
+          # this line.
+          monitor_permissions: "false"
+          # Use a variable to specify the permissions monitoring
+          # configuration. By default this will yield the
+          # configuration stored in the cisagov organization-level
+          # variable, but if you want to use a different configuration
+          # then simply:
+          # 1. Create a repository-level variable with the name
+          # ACTIONS_PERMISSIONS_CONFIG.
+          # 2. Set this new variable's value to the configuration you
+          # want to use for this repository.
+          #
+          # Note in particular that changing the permissions
+          # monitoring configuration *does not* require you to modify
+          # this workflow.
+          permissions_monitoring_config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
       - id: setup-env
         uses: cisagov/setup-env-github-action@develop
       - uses: actions/checkout@v4
