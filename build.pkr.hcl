@@ -5,6 +5,7 @@ build {
   ]
 
   provisioner "ansible" {
+    galaxy_file   = "ansible/requirements.yml"
     playbook_file = "ansible/upgrade.yml"
     use_proxy     = false
     use_sftp      = true
