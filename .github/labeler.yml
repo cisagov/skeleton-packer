@@ -28,10 +28,10 @@ github-actions:
       - any-glob-to-any-file:
           - .github/workflows/**
 # Enable if Packer is used in the repository.
-# packer:
-#   - changed-files:
-#       - any-glob-to-any-file:
-#           - "**/*.pkr.hcl"
+packer:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.pkr.hcl"
 # Enable if Python is used in the repository.
 # python:
 #   - changed-files:
