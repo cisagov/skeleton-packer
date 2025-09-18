@@ -37,10 +37,10 @@ packer:
       - any-glob-to-any-file:
           - "**/*.pkr.hcl"
 # Enable if Python is used in the repository.
-# python:
-#   - changed-files:
-#       - any-glob-to-any-file:
-#           - "**/*.py"
+python:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.py"
 # Enable if Terraform is used in the repository.
 terraform:
   - changed-files:
