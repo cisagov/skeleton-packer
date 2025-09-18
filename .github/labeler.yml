@@ -52,6 +52,7 @@ test:
           - .isort.cfg
           - .mdl_config.yaml
           - .yamllint
+          - tests/**
 upstream update:
   - head-branch:
       # Any Lineage pull requests should use this branch.
