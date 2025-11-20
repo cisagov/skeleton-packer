@@ -1,6 +1,8 @@
 # skeleton-packer 💀📦 #
 
 [![GitHub Build Status](https://github.com/cisagov/skeleton-packer/workflows/build/badge.svg)](https://github.com/cisagov/skeleton-packer/actions)
+[![License](https://img.shields.io/github/license/cisagov/skeleton-packer)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/skeleton-packer/workflows/CodeQL/badge.svg)](https://github.com/cisagov/skeleton-packer/actions/workflows/codeql-analysis.yml)
 
 This is a generic skeleton project that can be used to quickly get a
 new [cisagov](https://github.com/cisagov) GitHub
