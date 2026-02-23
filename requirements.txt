@@ -24,5 +24,4 @@ ansible-core>=2.17.7
 jmespath
 # The bump-version script requires at least version 3 of semver.
 semver>=3
-setuptools
-wheel
+setuptools>=70.1
