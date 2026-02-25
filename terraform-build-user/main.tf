@@ -13,6 +13,8 @@ module "iam_user" {
     # Any Packer AMIs that require access to the third-party bucket
     # will also require access to this SSM Parameter Store parameter.
     # "/third_party_bucket_name",
+    # Necessary for any instances that run the Wazuh agent
+    "/wazuh_agent/manager",
   ]
   user_name = "build-skeleton-packer"
 }
