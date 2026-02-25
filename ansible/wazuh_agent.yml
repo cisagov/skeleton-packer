@@ -1,0 +1,12 @@
+---
+- name: Setup Wazuh agent
+  hosts: all
+  become: true
+  become_method: ansible.builtin.sudo
+  tasks:
+    - name: Install and configure Wazuh agent
+      ansible.builtin.include_role:
+        name: wazuh_agent
+      vars:
+        # The user information and ssh keys for the VNC user
+        wazuh_agent_manager: "{{ lookup('aws_ssm', '/wazuh_agent/manager') }}"

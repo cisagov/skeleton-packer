@@ -31,3 +31,5 @@
   src: https://github.com/cisagov/ansible-role-systemd-timesyncd-aws
 - name: upgrade
   src: https://github.com/cisagov/ansible-role-upgrade
+- name: wazuh_agent
+  src: https://github.com/cisagov/ansible-role-wazuh-agent
