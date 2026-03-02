@@ -12,5 +12,8 @@
 - name: Import AWS playbook
   ansible.builtin.import_playbook: aws.yml
 
+- name: Import Wazuh agent playbook
+  ansible.builtin.import_playbook: wazuh_agent.yml
+
 - name: Import Example playbook
   ansible.builtin.import_playbook: example.yml
