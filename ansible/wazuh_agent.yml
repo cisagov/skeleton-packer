@@ -8,6 +8,6 @@
       ansible.builtin.include_role:
         name: wazuh_agent
       vars:
-        # The user information and ssh keys for the VNC user
+        # The IP or hostname of the Wazuh manager
         wazuh_agent_manager: >-
           {{ lookup('amazon.aws.aws_ssm', '/wazuh_agent/manager') }}
