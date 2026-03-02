@@ -9,4 +9,5 @@
         name: wazuh_agent
       vars:
         # The user information and ssh keys for the VNC user
-        wazuh_agent_manager: "{{ lookup('aws_ssm', '/wazuh_agent/manager') }}"
+        wazuh_agent_manager: >-
+          {{ lookup('amazon.aws.aws_ssm', '/wazuh_agent/manager') }}
