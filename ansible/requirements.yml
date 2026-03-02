@@ -33,4 +33,3 @@
   src: https://github.com/cisagov/ansible-role-upgrade
 - name: wazuh_agent
   src: https://github.com/cisagov/ansible-role-wazuh-agent
-  version: bugfix/add-drop-in
