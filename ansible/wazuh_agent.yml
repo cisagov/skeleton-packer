@@ -10,4 +10,4 @@
       vars:
         # The IP or hostname of the Wazuh manager
         wazuh_agent_manager: >-
-          {{ lookup('amazon.aws.aws_ssm', '/wazuh_agent/manager') }}
+          {{ lookup('amazon.aws.ssm_parameter', '/wazuh_agent/manager') }}
