@@ -205,7 +205,13 @@ jobs:
           python -m pip install --upgrade pip setuptools
           pip install --upgrade --requirement requirements-test.txt
       - name: Install Ansible roles
-        run: ansible-galaxy install --force --role-file ansible/requirements.yml
+        run: >-
+          ansible-galaxy role install --force
+          --role-file ansible/requirements.yml
+      - name: Install Ansible collections
+        run: >-
+          ansible-galaxy collection install --force
+          --requirements-file ansible/requirements.yml
       # This must happen before pre-commit is run or the Packer format
       # linter will throw an error.
       - name: Install Packer plugins
