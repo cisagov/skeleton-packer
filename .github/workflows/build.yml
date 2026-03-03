@@ -189,7 +189,7 @@ jobs:
       #
       # This temporary fix (via the cisagov branch) allows for ATX
       # header support when terraform-docs is run during linting and
-      # output delimiter rows with cell spacing that passes
+      # outputs delimiter rows with cell spacing that passes
       # Markdownlint's MD060/table-column-style rule.
       - name: Clone cisagov branch from terraform-docs fork
         run: |
