@@ -1,35 +1,45 @@
 ---
-- name: amazon_efs_utils
-  src: https://github.com/cisagov/ansible-role-amazon-efs-utils
-- name: amazon_ssm_agent
-  src: https://github.com/cisagov/ansible-role-amazon-ssm-agent
-- name: automated_security_updates
-  src: https://github.com/cisagov/ansible-role-automated-security-updates
-- name: banner
-  src: https://github.com/cisagov/ansible-role-banner
-- name: clamav
-  src: https://github.com/cisagov/ansible-role-clamav
-- name: cloudwatch_agent
-  src: https://github.com/cisagov/ansible-role-cloudwatch-agent
-- name: example
-  src: https://github.com/cisagov/skeleton-ansible-role
-- name: htop
-  src: https://github.com/cisagov/ansible-role-htop
-- name: nvme
-  src: https://github.com/cisagov/ansible-role-nvme
-- name: persist_journald
-  src: https://github.com/cisagov/ansible-role-persist-journald
-- name: pip
-  src: https://github.com/cisagov/ansible-role-pip
-- name: python
-  src: https://github.com/cisagov/ansible-role-python
-- name: remove_python2
-  src: https://github.com/cisagov/ansible-role-remove-python2
-- name: systemd_resolved
-  src: https://github.com/cisagov/ansible-role-systemd-resolved
-- name: systemd_timesyncd_aws
-  src: https://github.com/cisagov/ansible-role-systemd-timesyncd-aws
-- name: upgrade
-  src: https://github.com/cisagov/ansible-role-upgrade
-- name: wazuh_agent
-  src: https://github.com/cisagov/ansible-role-wazuh-agent
+collections:
+  # Required because we are using the amazon.aws.aws_ssm Ansible
+  # lookup plugin to pull parameters value from AWS Parameter Store.
+  - amazon.aws
+  # Required because we are using the community.general.json_query
+  # filter in our Ansible code in the
+  # cisagov/ansible-role-amazon-efs-utils role:
+  # https://docs.ansible.com/projects/ansible/latest/collections/community/general/json_query_filter.html
+  - community.general
+roles:
+  - name: amazon_efs_utils
+    src: https://github.com/cisagov/ansible-role-amazon-efs-utils
+  - name: amazon_ssm_agent
+    src: https://github.com/cisagov/ansible-role-amazon-ssm-agent
+  - name: automated_security_updates
+    src: https://github.com/cisagov/ansible-role-automated-security-updates
+  - name: banner
+    src: https://github.com/cisagov/ansible-role-banner
+  - name: clamav
+    src: https://github.com/cisagov/ansible-role-clamav
+  - name: cloudwatch_agent
+    src: https://github.com/cisagov/ansible-role-cloudwatch-agent
+  - name: example
+    src: https://github.com/cisagov/skeleton-ansible-role
+  - name: htop
+    src: https://github.com/cisagov/ansible-role-htop
+  - name: nvme
+    src: https://github.com/cisagov/ansible-role-nvme
+  - name: persist_journald
+    src: https://github.com/cisagov/ansible-role-persist-journald
+  - name: pip
+    src: https://github.com/cisagov/ansible-role-pip
+  - name: python
+    src: https://github.com/cisagov/ansible-role-python
+  - name: remove_python2
+    src: https://github.com/cisagov/ansible-role-remove-python2
+  - name: systemd_resolved
+    src: https://github.com/cisagov/ansible-role-systemd-resolved
+  - name: systemd_timesyncd_aws
+    src: https://github.com/cisagov/ansible-role-systemd-timesyncd-aws
+  - name: upgrade
+    src: https://github.com/cisagov/ansible-role-upgrade
+  - name: wazuh_agent
+    src: https://github.com/cisagov/ansible-role-wazuh-agent
