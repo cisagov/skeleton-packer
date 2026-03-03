@@ -1,12 +1,16 @@
 ---
 collections:
-  # Required because we are using the amazon.aws.aws_ssm Ansible
+  # Required because we are using the amazon.aws.ssm_parameter Ansible
   # lookup plugin to pull parameters value from AWS Parameter Store.
   - amazon.aws
-  # Required because we are using the community.general.json_query
-  # filter in our Ansible code in the
-  # cisagov/ansible-role-amazon-efs-utils role:
-  # https://docs.ansible.com/projects/ansible/latest/collections/community/general/json_query_filter.html
+  # Required by the following Ansible roles:
+  # - ansible-role-amazon-efs-utils (uses community.general.json_query
+  #   and community.general.make)
+  # - ansible-role-amazon-ssm-agent (uses community.general.snap)
+  # - ansible-role-automated-security-updates (uses community.general.ini_file)
+  # - ansible-role-cloudwatch-agent (uses community.general.ini_file)
+  # - ansible-role-persist-journald (uses community.general.ini_file)
+  # - ansible-role-systemd-resolved (uses community.general.ini_file)
   - community.general
 roles:
   - name: amazon_efs_utils
