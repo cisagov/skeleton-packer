@@ -1,7 +1,7 @@
 ---
 collections:
   # Required by the following playbooks:
-  # - ansible/wazuh.yml (uses amazon.aws.ssm_parameter)
+  # - ansible/wazuh_agent.yml (uses amazon.aws.ssm_parameter)
   - amazon.aws
   # Required by the following Ansible roles:
   # - ansible-role-amazon-efs-utils (uses community.general.json_query
