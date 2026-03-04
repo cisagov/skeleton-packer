@@ -176,7 +176,8 @@ Here is an example of how to kick off a pre-release build:
 
 ```console
 pip install --requirement requirements-dev.txt
-ansible-galaxy install --force --force-with-deps --role-file ansible/requirements.yml
+ansible-galaxy role install --force --force-with-deps --role-file ansible/requirements.yml
+ansible-galaxy collection install --force --force-with-deps --requirements-file ansible/requirements.yml
 AWS_PROFILE=cool-images-ec2amicreate-skeleton-packer packer build --timestamp-ui -var release_tag=$(./bump-version show) -var is_prerelease=true .
 ```
 
