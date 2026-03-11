@@ -33,7 +33,9 @@ remote profile data in order to use
 
 > [!IMPORTANT]
 > Unless you are using the `community.general.json_query` Ansible
-> filter, there is a good chance that you do not need the `jmespath`
+> filter (for example, via the
+> [cisagov/ansible-role-amazon-efs-utils](https://github.com/cisagov/ansible-role-amazon-efs-utils)
+> role), there is a good chance that you do not need the `jmespath`
 > Python dependency that is included in
 > [`requirements.txt`](requirements.txt).  In such a case this
 > dependency can be removed from that file.
