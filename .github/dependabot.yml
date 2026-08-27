@@ -36,12 +36,17 @@ updates:
 
   - directory: /
     # ignore:
+    #   # Managed by cisagov/skeleton-generic
+    #   - dependency-name: pre-commit
+    #   - dependency-name: semver
+    #   - dependency-name: setuptools
     #   # Managed by cisagov/skeleton-packer
     #   - dependency-name: ansible
     #   - dependency-name: ansible-core
     package-ecosystem: pip
     schedule:
       interval: weekly
+    versioning-strategy: increase-if-necessary
 
   - directories:
       - /terraform-build-user
