@@ -35,11 +35,11 @@ updates:
       interval: weekly
 
   - directory: /
-    # ignore:
-    #   # Managed by cisagov/skeleton-generic
-    #   - dependency-name: pre-commit
-    #   - dependency-name: semver
-    #   - dependency-name: setuptools
+    ignore:
+      # Managed by cisagov/skeleton-generic
+      - dependency-name: pre-commit
+      - dependency-name: semver
+      - dependency-name: setuptools
     #   # Managed by cisagov/skeleton-packer
     #   - dependency-name: ansible
     #   - dependency-name: ansible-core
