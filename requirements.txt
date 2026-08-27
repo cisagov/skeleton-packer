@@ -22,8 +22,6 @@ boto3
 # cisagov/ansible-role-amazon-efs-utils role:
 # https://docs.ansible.com/projects/ansible/latest/collections/community/general/json_query_filter.html
 jmespath
-# The bump-version script requires at least version 3 of semver.
-semver>=3
 # With setuptools 70.1 and later it is no longer necessary to install
 # wheel alongside setuptools.
 setuptools>=70.1
