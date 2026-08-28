@@ -19,35 +19,77 @@ collections:
 roles:
   - name: amazon_efs_utils
     src: https://github.com/cisagov/ansible-role-amazon-efs-utils
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-amazon-efs-utils
+    version: v4.1.0
   - name: amazon_ssm_agent
     src: https://github.com/cisagov/ansible-role-amazon-ssm-agent
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-amazon-ssm-agent
+    version: v3.1.0
   - name: automated_security_updates
     src: https://github.com/cisagov/ansible-role-automated-security-updates
+    # yamllint complains about this Renovate annotation line being too
+    # long, but there is nothing I can do about that.
+    #
+    # yamllint disable-line rule:line-length
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-automated-security-updates
+    version: v3.1.0
   - name: banner
     src: https://github.com/cisagov/ansible-role-banner
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-banner
+    version: v3.1.0
   - name: clamav
     src: https://github.com/cisagov/ansible-role-clamav
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-clamav
+    version: v5.1.0
   - name: cloudwatch_agent
     src: https://github.com/cisagov/ansible-role-cloudwatch-agent
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-cloudwatch-agent
+    version: v4.1.0
   - name: example
     src: https://github.com/cisagov/skeleton-ansible-role
+    # renovate: datasource=github-releases depName=cisagov/skeleton-ansible-role
+    version: v4.0.0
   - name: htop
     src: https://github.com/cisagov/ansible-role-htop
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-htop
+    version: v3.1.0
   - name: nvme
     src: https://github.com/cisagov/ansible-role-nvme
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-nvme
+    version: v3.1.0
   - name: persist_journald
     src: https://github.com/cisagov/ansible-role-persist-journald
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-persist-journald
+    version: v3.1.0
   - name: pip
     src: https://github.com/cisagov/ansible-role-pip
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-pip
+    version: v3.2.0
   - name: python
     src: https://github.com/cisagov/ansible-role-python
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-python
+    version: v3.1.0
   - name: remove_python2
     src: https://github.com/cisagov/ansible-role-remove-python2
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-remove-python2
+    version: v3.1.0
   - name: systemd_resolved
     src: https://github.com/cisagov/ansible-role-systemd-resolved
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-systemd-resolved
+    version: v3.1.1
   - name: systemd_timesyncd_aws
     src: https://github.com/cisagov/ansible-role-systemd-timesyncd-aws
+    # yamllint complains about this Renovate annotation line being too
+    # long, but there is nothing I can do about that.
+    #
+    # yamllint disable-line rule:line-length
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-systemd-timesyncd-aws
+    version: v3.1.0
   - name: upgrade
     src: https://github.com/cisagov/ansible-role-upgrade
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-upgrade
+    version: v3.1.0
   - name: wazuh_agent
     src: https://github.com/cisagov/ansible-role-wazuh-agent
+    # renovate: datasource=github-releases depName=cisagov/ansible-role-wazuh-agent
+    version: v2.2.1
