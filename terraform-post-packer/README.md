@@ -13,7 +13,7 @@ details.
 
 | Name | Version |
 | ---- | ------- |
-| terraform | ~> 1.1 |
+| terraform | ~> 1.4 |
 | aws | ~> 6.7 |
 
 ## Providers ##
@@ -21,6 +21,7 @@ details.
 | Name | Version |
 | ---- | ------- |
 | aws | ~> 6.7 |
+| terraform | n/a |
 
 ## Modules ##
 
@@ -33,6 +34,7 @@ details.
 
 | Name | Type |
 | ---- | ---- |
+| [terraform_data.ami_janitor](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [aws_ami_ids.historical_amis_arm64](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami_ids) | data source |
 | [aws_ami_ids.historical_amis_x86_64](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami_ids) | data source |
 | [aws_caller_identity.images](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
