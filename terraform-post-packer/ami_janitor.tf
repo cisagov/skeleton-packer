@@ -4,6 +4,21 @@
 resource "terraform_data" "ami_janitor" {
   for_each = setunion(setsubtract(toset(data.aws_ami_ids.historical_amis_arm64.ids), local.recent_amis_arm64), setsubtract(toset(data.aws_ami_ids.historical_amis_x86_64.ids), local.recent_amis_x86_64))
 
+  # This depends_on block helps make sure that the AMI launch
+  # permission resources are created *before* the provisioners run.
+  #
+  # According to Copilot, "Terraform may run this provisioner
+  # concurrently with removal of a module instance when an AMI ages
+  # out of the recent set. The check can therefore observe the old
+  # permission and skip cleanup, leaving the AMI until a later
+  # apply. Explicitly sequence cleanup after both launch-permission
+  # modules (and account for AWS propagation) so the newly stale AMI
+  # is handled deterministically."
+  depends_on = [
+    module.ami_launch_permission_arm64,
+    module.ami_launch_permission_x86_64,
+  ]
+
   triggers_replace = {
     # This forces the provisioner to run every time this Terraform
     # code is run.
