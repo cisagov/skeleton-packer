@@ -13,7 +13,7 @@ details.
 
 | Name | Version |
 | ---- | ------- |
-| terraform | ~> 1.5 |
+| terraform | ~> 1.4 |
 | aws | ~> 6.7 |
 
 ## Providers ##

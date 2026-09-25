@@ -2,9 +2,9 @@ terraform {
   # Version 1.1 of Terraform is the first version to support the
   # nullable key in variable definitions.
   #
-  # Version 1.5 of Terraform is the first version to support the
+  # Version 1.4 of Terraform is the first version to support the
   # terraform_data resource type.
-  required_version = "~> 1.5"
+  required_version = "~> 1.4"
 
   # If you use any other providers you should also pin them to the
   # major version currently being used.  This practice will help us
