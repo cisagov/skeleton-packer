@@ -20,7 +20,10 @@ resource "terraform_data" "ami_janitor" {
       export AWS_REGION=us-east-1
 
       # Extract launch permissions
-      permissions=$(aws ec2 describe-image-attribute --image-id "${self.triggers_replace.ami_id}" --attribute launchPermission --query 'LaunchPermissions[*]' --output text)
+      if ! permissions=$(aws ec2 describe-image-attribute --image-id "${self.triggers_replace.ami_id}" --attribute launchPermission --query 'LaunchPermissions[*]' --output text); then
+        echo "Unable to inspect launch permissions for AMI ${self.triggers_replace.ami_id}; refusing to deregister it." >&2
+        exit 1
+      fi
 
       # If no external accounts are attached, drop the AMI and its
       # snapshots in one go.
