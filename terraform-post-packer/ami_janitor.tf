@@ -1,4 +1,4 @@
-# Deregister any AMIs outside of local.recent_amis_x86_64 and
+# Deregister any AMIs outside of local.recent_amis_arm64 and
 # local.recent_amis_x86_64, but first verify that they no longer have
 # launch permissions associated with them.
 resource "terraform_data" "ami_janitor" {
