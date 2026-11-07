@@ -20,7 +20,7 @@ roles:
   - name: amazon_efs_utils
     src: https://github.com/cisagov/ansible-role-amazon-efs-utils
     # renovate: datasource=github-releases depName=cisagov/ansible-role-amazon-efs-utils
-    version: v4.1.0
+    version: v4.1.1
   - name: amazon_ssm_agent
     src: https://github.com/cisagov/ansible-role-amazon-ssm-agent
     # renovate: datasource=github-releases depName=cisagov/ansible-role-amazon-ssm-agent
