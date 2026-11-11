@@ -7,6 +7,7 @@ module "iam_user" {
     aws.images-ssm = aws.images-ssm
   }
 
+  ec2amicreate_role_max_session_duration = 7200
   ssm_parameters = [
     "/cyhy/dev/users",
     "/ssh/public_keys/*",
